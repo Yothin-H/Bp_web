@@ -19,13 +19,19 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #DFDFDF;  /* Background color for the entire app */
+        background-color: #DFDFDF; 
     }
-    st.Markdown h1, h2, h3, p {
-        color: black !important;  /* General rule for all headings and paragraphs */
+    .stMarkdown h3 {
+        color: black !important;  /* Subheader text color set to black */
+    }
+    .stMarkdown p {
+        color: black !important;  /* Paragraph text color follows the theme */
+    }
+    .stMarkdown h1 {
+        color: black !important;  /* Subheader text color set to black */
     }
     .stAlert p {
-        color: #3989E2 !important;  /* Adjust the color for alert/info boxes */
+        color: #3989E2 !important;  /* st.info() text color set to black */
     }
     </style>
     """,
