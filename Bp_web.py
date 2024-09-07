@@ -29,6 +29,9 @@ st.markdown(
     .stMarkdown h1 {
         color: black !important;  /* Subheader text color set to black */
     }
+    .stMarkdown h2 {
+        color: black !important;
+    }
     .stAlert p {
         color: #3989E2 !important;  /* st.info() text color set to black */
     }
