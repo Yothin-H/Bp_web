@@ -51,23 +51,6 @@ def build_model(df):
     st.subheader('3. Plot of Model Performance (Test set)')
 
 
-    with st.markdown('**R-squared**'):
-        # Tall
-        predictions_test["R-Squared"] = [0 if i < 0 else i for i in predictions_test["R-Squared"] ]
-        plt.figure(figsize=(3, 9))
-        sns.set_theme(style="whitegrid")
-        ax1 = sns.barplot(y=predictions_test.index, x="R-Squared", data=predictions_test)
-        ax1.set(xlim=(0, 1))
-    st.markdown(imagedownload(plt,'plot-r2-tall.pdf'), unsafe_allow_html=True)
-        # Wide
-    plt.figure(figsize=(9, 3))
-    sns.set_theme(style="whitegrid")
-    ax1 = sns.barplot(x=predictions_test.index, y="R-Squared", data=predictions_test)
-    ax1.set(ylim=(0, 1))
-    plt.xticks(rotation=90)
-    st.pyplot(plt)
-    st.markdown(imagedownload(plt,'plot-r2-wide.pdf'), unsafe_allow_html=True)
-
     with st.markdown('**RMSE (capped at 50)**'):
         # Tall
         predictions_test["RMSE"] = [50 if i > 50 else i for i in predictions_test["RMSE"] ]
