@@ -200,6 +200,7 @@ This is a tool for genotypic drug resistance prediction developed by **Yothin Hi
 
 # Displays the dataset
 st.subheader('Upload your VCF file')
+st.button('Press to use Example Dataset2')
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file,sep='\t')
