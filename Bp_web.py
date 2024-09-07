@@ -20,7 +20,7 @@ st.markdown(
     .stApp {
         background-color: #DFDFDF;  /* Background color for the entire app */
     }
-    h1, h2, h3, p {
+    h1, h2, h3{
         color: black !important;  /* General rule for all headings and paragraphs */
     }
     .stAlert p {
@@ -28,7 +28,7 @@ st.markdown(
     }
     </style>
     """,
-    
+
     unsafe_allow_html=True
 )
 
