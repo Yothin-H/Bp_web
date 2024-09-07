@@ -29,7 +29,7 @@ st.markdown(
     .stMarkdown h1 {
         color: black !important;  /* Subheader text color set to black */
     }
-    .stMarkdown h2 {
+    .css-1v3fvcr h2 {  /* More specific class targeting for subheaders */
         color: black !important;
     }
     .stAlert p {
