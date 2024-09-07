@@ -21,7 +21,7 @@ st.markdown(
     .stApp {
         background-color: #DFDFDF;  /* Background color for the entire app */
     }
-    h1, h2, h3, p {
+    st.Markdown h1, h2, h3, p {
         color: black !important;  /* General rule for all headings and paragraphs */
     }
     .stAlert p {
