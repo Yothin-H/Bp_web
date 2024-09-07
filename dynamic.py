@@ -4,7 +4,6 @@ import streamlit as st
 st.set_page_config(page_title="Custom Theme Toggle for Main Area", page_icon="🎨", layout="wide")
 
 # Sidebar for theme selection
-theme_choice = st.sidebar.radio("Select Theme:", ("Light Mode", "Dark Mode"))
 
 # Set CSS based on user choice
 if theme_choice == "Dark Mode":
