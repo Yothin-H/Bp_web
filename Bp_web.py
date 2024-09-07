@@ -32,35 +32,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-components.html(
-    """
-    <script>
-    // Wait for the DOM to load
-    document.addEventListener("DOMContentLoaded", function() {
-        // Find the button by its unique text content
-        const specificButton = Array.from(document.querySelectorAll('button')).find(el => el.innerText === 'Press to use Example Dataset');
-        
-        // Apply custom styles to the specific button
-        if (specificButton) {
-            specificButton.style.backgroundColor = '#4CAF50';  /* Green background */
-            specificButton.style.color = 'white';  /* White text */
-            specificButton.style.padding = '10px 24px';  /* Padding */
-            specificButton.style.fontSize = '16px';  /* Font size */
-            specificButton.style.borderRadius = '8px';  /* Rounded corners */
-            specificButton.style.border = 'none';  /* No border */
-            specificButton.style.cursor = 'pointer';  /* Pointer cursor on hover */
-            specificButton.style.transition = 'background-color 0.3s ease';  /* Transition effect */
-            
-            // Hover effect
-            specificButton.onmouseover = function() { this.style.backgroundColor = '#45a049'; };
-            specificButton.onmouseout = function() { this.style.backgroundColor = '#4CAF50'; };
-        }
-    });
-    </script>
-    """,
-    height=0,
-    scrolling=False,
-)
+
 #---------------------------------#
 # Sidebar - Collects user input features into dataframe
 with st.sidebar.header('1. Upload your VCF data'):
