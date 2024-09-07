@@ -229,10 +229,10 @@ if uploaded_file is not None:
     a=predicted(df)
 else:
     st.info('Awaiting for VCF file to be uploaded.')
-    if st.button('Press to use Example Dataset'):
+    if st.button('Press to use Example Dataset',key='example_button'):
         df=pd.read_csv('example.vcf',sep='\t')
 
-        st.markdown('The in-house dataset is used as the example.',key='example_button')
+        st.markdown('The in-house dataset is used as the example.')
         st.write(df.head(5))
 
         a=predicted(df)
