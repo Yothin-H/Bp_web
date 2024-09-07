@@ -201,7 +201,7 @@ if uploaded_file is not None:
 else:
     st.info('Awaiting for VCF file to be uploaded.')
     if st.button('Press to use Example Dataset'):
-        df=pd.read_csv('/archive2/k_orawee/Taow/streamlit/example.vcf',sep='\t')
+        df=pd.read_csv('example.vcf',sep='\t')
 
         st.markdown('The in-house dataset is used as the example.')
         st.write(df.head(5))
