@@ -33,7 +33,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Sidebar content
 st.sidebar.title("Sidebar")
 st.sidebar.write("This is the sidebar content. Sidebar color remains unchanged.")
 
