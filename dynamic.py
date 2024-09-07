@@ -33,10 +33,3 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.sidebar.title("Sidebar")
-st.sidebar.write("This is the sidebar content. Sidebar color remains unchanged.")
-
-# Main Area content
-st.write("## Main Area")
-st.write("This is the main area content in the selected theme.")
-st.write("You can add more content here, and its background will change according to the theme.")
