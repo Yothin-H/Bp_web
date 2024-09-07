@@ -6,6 +6,8 @@ import base64
 import io
 from PIL import Image
 from datetime import datetime
+import streamlit.components.v1 as components
+
 
 #---------------------------------#
 
@@ -26,25 +28,39 @@ st.markdown(
     .stAlert p {
         color: #3989E2 !important;  /* Adjust the color for alert/info boxes */
     }
-    div.stButton > button {
-        background-color: #4CAF50;  /* Green background */
-        color: white !important;  /* Button text color to white */
-        padding: 10px 24px;  /* Padding */
-        font-size: 16px;  /* Font size */
-        border-radius: 8px;  /* Rounded corners */
-        border: none;  /* No border */
-        cursor: pointer;  /* Pointer cursor on hover */
-        transition: background-color 0.3s ease;  /* Transition effect */
-    }
-
-    div.stButton > button:hover {
-        background-color: #45a049;  /* Darker green on hover */
-    }
     </style>
     """,
     unsafe_allow_html=True
 )
-
+components.html(
+    """
+    <script>
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", function() {
+        // Find the button by its unique text content
+        const specificButton = Array.from(document.querySelectorAll('button')).find(el => el.innerText === 'Press to use Example Dataset');
+        
+        // Apply custom styles to the specific button
+        if (specificButton) {
+            specificButton.style.backgroundColor = '#4CAF50';  /* Green background */
+            specificButton.style.color = 'white';  /* White text */
+            specificButton.style.padding = '10px 24px';  /* Padding */
+            specificButton.style.fontSize = '16px';  /* Font size */
+            specificButton.style.borderRadius = '8px';  /* Rounded corners */
+            specificButton.style.border = 'none';  /* No border */
+            specificButton.style.cursor = 'pointer';  /* Pointer cursor on hover */
+            specificButton.style.transition = 'background-color 0.3s ease';  /* Transition effect */
+            
+            // Hover effect
+            specificButton.onmouseover = function() { this.style.backgroundColor = '#45a049'; };
+            specificButton.onmouseout = function() { this.style.backgroundColor = '#4CAF50'; };
+        }
+    });
+    </script>
+    """,
+    height=0,
+    scrolling=False,
+)
 #---------------------------------#
 # Sidebar - Collects user input features into dataframe
 with st.sidebar.header('1. Upload your VCF data'):
@@ -200,7 +216,6 @@ This is a tool for genotypic drug resistance prediction developed by **Yothin Hi
 
 # Displays the dataset
 st.subheader('Upload your VCF file')
-st.button('Press to use Example Dataset2')
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file,sep='\t')
