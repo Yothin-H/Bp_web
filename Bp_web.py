@@ -26,8 +26,19 @@ st.markdown(
     .stAlert p {
         color: #3989E2 !important;  /* Adjust the color for alert/info boxes */
     }
-    .stButton {
-        color: white !important; 
+    div.stButton > button {
+        background-color: #4CAF50;  /* Green background */
+        color: white !important;  /* Button text color to white */
+        padding: 10px 24px;  /* Padding */
+        font-size: 16px;  /* Font size */
+        border-radius: 8px;  /* Rounded corners */
+        border: none;  /* No border */
+        cursor: pointer;  /* Pointer cursor on hover */
+        transition: background-color 0.3s ease;  /* Transition effect */
+    }
+
+    div.stButton > button:hover {
+        background-color: #45a049;  /* Darker green on hover */
     }
     </style>
     """,
