@@ -71,7 +71,7 @@ def predicted(test):
 
     aa=int(quality_filter)
     aa2=None
-    '''
+    
     try:
     # Check if another_param is a digit and less than or equal to the max of 'QUAL'
         if another_param.strip().isdigit() and (int(another_param) <= int(merged_df['QUAL'].max())):
@@ -82,7 +82,7 @@ def predicted(test):
     except Exception as e:
         # Catch any other exceptions and display a message
         st.sidebar.error("An error occurred while processing the quality filter.")
-    '''
+    
     if aa2 is not None:
         merged_df2=merged_df.query('QUAL>=@aa2')
     else :
