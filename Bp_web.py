@@ -50,7 +50,7 @@ with st.sidebar.header('2. Set Parameters'):
 #---------------------------------#
 # Model building
 def predicted(test):
-    data=pd.read_csv('/archive2/k_orawee/Taow/streamlit/gene_database.csv')
+    data=pd.read_csv('gene_database.csv')
     # Convert columns to string to ensure consistent data types
     test['#CHROM'] = test['#CHROM'].astype(str)
     data['Sequence_Ref'] = data['Sequence_Ref'].astype(str)
