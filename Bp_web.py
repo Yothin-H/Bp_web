@@ -232,7 +232,7 @@ else:
     if st.button('Press to use Example Dataset'):
         df=pd.read_csv('example.vcf',sep='\t')
 
-        st.markdown('The in-house dataset is used as the example.')
+        st.markdown('The in-house dataset is used as the example.',key='example_button')
         st.write(df.head(5))
 
         a=predicted(df)
