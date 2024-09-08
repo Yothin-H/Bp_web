@@ -158,9 +158,10 @@ def predicted(test):
         matches1.index = matches1.index + 1
         if matches1.empty :
             st.markdown('No resistant determinants found')
+            st.markdown(filedownload(matches1,'first_line.csv'), unsafe_allow_html=True)
         else :
             st.write(matches1)
-        st.markdown(filedownload(matches1,'first_line.csv'), unsafe_allow_html=True)
+        
         
         
         st.subheader('The second line drugs')
@@ -169,9 +170,10 @@ def predicted(test):
         matches2.index = matches2.index + 1
         if matches2.empty :
             st.markdown('No resistant determinants found')
+            st.markdown(filedownload(matches2,'second_line.csv'), unsafe_allow_html=True)
         else :
             st.write(matches2)
-        st.markdown(filedownload(matches2,'second_line.csv'), unsafe_allow_html=True)
+        
     else :
         mm=merged_df2[['Gene','POS','REF','ALT','QUAL','Positive Ref Codon','Positive Alt Codon','Nucleotide change','Amino acid change','Drug','AST','Reference']]
         mm = mm.rename({'AST': 'DST'}, axis='columns')
