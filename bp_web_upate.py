@@ -167,8 +167,10 @@ def predicted(test):
         for i in range(len(mm)):
             matches2 = mm.query('Drug == "Imipenem" or Drug == "Co-trimoxazole" or Drug == "Amoxycillin/Clavulanic acid"').reset_index(drop=True)
         matches2.index = matches2.index + 1
-
-        st.write(matches2)
+        if matches2.empty :
+            st.markdown('No resistant determinants found')
+        else :
+            st.write(matches2)
         st.markdown(filedownload(matches2,'second_line.csv'), unsafe_allow_html=True)
     else :
         mm=merged_df2[['Gene','POS','REF','ALT','QUAL','Positive Ref Codon','Positive Alt Codon','Nucleotide change','Amino acid change','Drug','AST','Reference']]
