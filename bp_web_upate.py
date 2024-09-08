@@ -156,8 +156,10 @@ def predicted(test):
             matches1 = mm.query('Drug == "Ceftazidime" or Drug == "Meropenem"').reset_index(drop=True)
         
         matches1.index = matches1.index + 1
-
-        st.write(matches1)
+        if matches1.empty :
+            st.markdown('No resistant determinants found')
+        else :
+            st.write(matches1)
         st.markdown(filedownload(matches1,'first_line.csv'), unsafe_allow_html=True)
         
         
