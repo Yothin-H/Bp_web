@@ -22,14 +22,14 @@ def run_vcftools_command(command):
 
 # Streamlit app
 st.title("VCFtools Runner")
+output_path = st.text_input("Enter output path:", "output.txt")
+
 outputcol=output_path+'/out_final_col.csv'
 tocol = "csvtool transpose "+'out_final.csv'+" > "+outputcol
 
 # Text input for VCFtools command
 command = st.text_input("Enter VCFtools command:", tocol)
 
-# Text input for output path
-output_path = st.text_input("Enter output path:", "output.txt")
 
 
 # Ensure the output path is safe
