@@ -14,7 +14,7 @@ st.title("VCFtool Runner")
 tocol = "csvtool transpose out_final.csv"
 
 # Text input for VCFtools command
-command = subprocess.call(tofas, shell=True)
+command = subprocess.call(tocol, shell=True)
 
 
 
