@@ -17,4 +17,11 @@ tocol = "csvtool transpose out_final.csv"
 command = subprocess.call(tocol, shell=True)
 
 
-
+if st.button("Run Command"):
+    with st.spinner("Running command..."):
+        command = subprocess.call(tocol, shell=True)
+        df=pd.read_csv(command)
+        st.write(df)
+        
+else:
+    pass
