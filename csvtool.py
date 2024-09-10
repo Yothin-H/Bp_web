@@ -23,13 +23,9 @@ def run_vcftools_command(command):
 st.title("VCFtools Runner")
 output_path = st.text_input("Enter output path:", "output.txt")
 
-# Ensure the directory exists
-if not os.path.exists(output_path):
-    os.makedirs(output_path)
-
 # Safely construct the output paths
 output_col_path = os.path.join(output_path, 'out_final_col.csv')
-tocol_command = "$(csvtool transpose out_final.csv)"
+tocol_command = f"csvtool transpose out_final.csv > {output_col_path}"
 
 # Text input for VCFtools command
 command = st.text_input("Enter VCFtools command:", tocol_command)
