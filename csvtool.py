@@ -21,7 +21,7 @@ def run_vcftools_command(command):
 # Streamlit app
 st.title("VCFtool Runner")
 #outputcol='out_final_col.csv'
-tocol = "$(csvtool transpose out_final.csv)"
+tocol = "csvtool transpose out_final.csv"
 
 # Text input for VCFtools command
 command = st.text_input("Enter VCFtools command:", tocol)
