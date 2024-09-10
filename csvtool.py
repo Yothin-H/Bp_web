@@ -7,16 +7,6 @@ import io
 from PIL import Image
 import subprocess
 
-def run_vcftools_command(command):
-    try:
-        # Run the vcftools command and capture the output
-        result = subprocess.run(
-            command, shell=True, text=True,
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE
-        )
-        return result.stdout, result.stderr
-    except Exception as e:
-        return "", str(e)
 
 # Streamlit app
 st.title("VCFtool Runner")
@@ -24,23 +14,7 @@ st.title("VCFtool Runner")
 tocol = "csvtool transpose out_final.csv"
 
 # Text input for VCFtools command
-command = st.text_input("Enter VCFtools command:", tocol)
+command = subprocess.call(tofas, shell=True)
 
-if st.button("Run Command"):
-    with st.spinner("Running command..."):
-        stdout, stderr = run_vcftools_command(command)
-        df=pd.read_csv(command)
-        st.write(df)
-        
-        if stdout:
-            st.subheader("Standard Output")
-            st.text(stdout)
-            df=pd.read_csv(outputcol)
-            st.write(df)
-            
-        
-        if stderr:
-            st.subheader("Standard Error")
-            st.text(stderr)
 
 
