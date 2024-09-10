@@ -1,11 +1,10 @@
-
-
 import streamlit as st
 import pandas as pd
 import base64
 import io
 from PIL import Image
 import subprocess
+import os  # Importing the missing os module
 
 def run_vcftools_command(command):
     try:
@@ -24,13 +23,12 @@ def run_vcftools_command(command):
 st.title("VCFtools Runner")
 output_path = st.text_input("Enter output path:", "output.txt")
 
-outputcol=output_path+'/out_final_col.csv'
-tocol = "csvtool transpose "+'out_final.csv'+" > "+outputcol
+# Safely construct the output paths
+output_col_path = os.path.join(output_path, 'out_final_col.csv')
+tocol_command = f"csvtool transpose out_final.csv > {output_col_path}"
 
 # Text input for VCFtools command
-command = st.text_input("Enter VCFtools command:", tocol)
-
-
+command = st.text_input("Enter VCFtools command:", tocol_command)
 
 # Ensure the output path is safe
 if not os.path.isabs(output_path):
@@ -56,4 +54,3 @@ if st.button("Run Command"):
         st.subheader("Download Output")
         with open(output_path, "rb") as file:
             st.download_button("Download File", file, file_name=os.path.basename(output_path))
-
