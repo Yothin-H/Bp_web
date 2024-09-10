@@ -29,7 +29,7 @@ if not os.path.exists(output_path):
 
 # Safely construct the output paths
 output_col_path = os.path.join(output_path, 'out_final_col.csv')
-tocol_command = f"csvtool transpose out_final.csv > {output_col_path}"
+tocol_command = "$(csvtool transpose out_final.csv)"
 
 # Text input for VCFtools command
 command = st.text_input("Enter VCFtools command:", tocol_command)
