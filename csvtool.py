@@ -35,8 +35,7 @@ if st.button("Run Command"):
         if stdout:
             st.subheader("Standard Output")
             st.text(stdout)
-            df=pd.read_csv(outputcol)
-            st.write(df)
+            
             
         
         if stderr:
